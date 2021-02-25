@@ -488,8 +488,8 @@ function session(options) {
         return false;
       }
       if (!sess || !sess.cookie || !sess.cookie.createdAt) {
-        debug('session should be timed out, but the createdAt value is not saved')
-        return true;
+        debug('Absolute session timeout is invalid because the createdAt value is not saved.')
+        return false;
       }
       var createdDate = new Date(sess.cookie.createdAt);
       var nowDate = new Date();
